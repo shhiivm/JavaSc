@@ -22,15 +22,16 @@
 
         <button
         onclick="console.log('You choose Rock')
-        let computerChoice = Math.floor(Math.random()*3);
+        computerChoiceSelection();
+        
         if(computerChoice===0){
-            console.log('Computer choose Rock')
+            
             console.log(`It's a tie`);
         }else if(computerChoice===1){
-            console.log('Computer choose Paper')
+            
             console.log('Computer Won')
         }else{
-            console.log('Computer choose Scissor')
+            
             console.log('You Won');
         }
 
@@ -38,36 +39,52 @@
         
         <button
         onclick="console.log('You choose Paper')
-        computerChoice = Math.floor(Math.random()*3);
+        computerChoiceSelection();
         if(computerChoice===0){
-            console.log('Computer choose Rock')
+            
             console.log('You Won');
         }else if(computerChoice===1){
-            console.log('Computer choose Paper')
+            
             console.log(`It's a tie`);
         }else{
-            console.log('Computer choose Scissor')
+            
             console.log('Computer Won')
         }
         ">Paper</button>
         
         <button
         onclick="console.log('You choose Scissor')
-        computerChoice = Math.floor(Math.random()*3);
+        computerChoiceSelection();
         if(computerChoice===0){
-            console.log('Computer choose Rock')
-            console.log('Computer Won')
+            
+            console.log('Computer Won');
         }else if(computerChoice===1){
-            console.log('Computer choose Paper')
+            
             console.log('You Won');
         }else{
-            console.log('Computer choose Scissor')
-            console.log(`It's a tie`);
+            
+            console.log(`It's a tie`)
         }
+       
         ">Scissor</button>
 
         <!-- <h2 id="result">You Won</h2> -->
     </div>
-    
+    <script>
+        let computerChoice;
+        function computerChoiceSelection(){
+        computerChoice = Math.floor(Math.random()*3);
+        if(computerChoice===0){
+            console.log('Computer choose Rock')
+            
+        }else if(computerChoice===1){
+            console.log('Computer choose Paper')
+            
+        }else{
+            console.log('Computer choose Scissor')
+            
+        }
+        }
+    </script>
 </body>
 </html>
