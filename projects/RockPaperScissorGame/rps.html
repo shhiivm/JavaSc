@@ -25,11 +25,15 @@
         let computerChoice = Math.floor(Math.random()*3);
         if(computerChoice===0){
             console.log('Computer choose Rock')
+            console.log(`It's a tie`);
         }else if(computerChoice===1){
             console.log('Computer choose Paper')
+            console.log('Computer Won')
         }else{
             console.log('Computer choose Scissor')
+            console.log('You Won');
         }
+
         ">Rock</button>
         
         <button
@@ -37,16 +41,32 @@
         computerChoice = Math.floor(Math.random()*3);
         if(computerChoice===0){
             console.log('Computer choose Rock')
+            console.log('You Won');
         }else if(computerChoice===1){
             console.log('Computer choose Paper')
+            console.log(`It's a tie`);
         }else{
             console.log('Computer choose Scissor')
+            console.log('Computer Won')
         }
         ">Paper</button>
         
         <button
-        onclick="console.log('You choose Scissor')"
-        >Scissor</button>
+        onclick="console.log('You choose Scissor')
+        computerChoice = Math.floor(Math.random()*3);
+        if(computerChoice===0){
+            console.log('Computer choose Rock')
+            console.log('Computer Won')
+        }else if(computerChoice===1){
+            console.log('Computer choose Paper')
+            console.log('You Won');
+        }else{
+            console.log('Computer choose Scissor')
+            console.log(`It's a tie`);
+        }
+        ">Scissor</button>
+
+        <!-- <h2 id="result">You Won</h2> -->
     </div>
     
 </body>
