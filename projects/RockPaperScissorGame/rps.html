@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Game</title>
+    <style>
+        .container{
+            border: 2px solid rgb(188, 174, 174);
+            width: 40%;
+            text-align: center;
+        }
+        button{
+            padding: 0px 10px;
+            margin: 4px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissor</h1>
+
+        <button
+        onclick="console.log('You choose Rock')
+        let computerChoice = Math.floor(Math.random()*3);
+        if(computerChoice===0){
+            console.log('Computer choose Rock')
+        }else if(computerChoice===1){
+            console.log('Computer choose Paper')
+        }else{
+            console.log('Computer choose Scissor')
+        }
+        ">Rock</button>
+        
+        <button
+        onclick="console.log('You choose Paper')"
+        >Paper</button>
+        
+        <button
+        onclick="console.log('You choose Scissor')"
+        >Scissor</button>
+    </div>
+    
+</body>
+</html>
