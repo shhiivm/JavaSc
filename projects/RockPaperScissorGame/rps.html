@@ -10,7 +10,7 @@
         width: 40%;
         text-align: center;
         margin: auto;
-        height: 250px;
+        height: auto;
         margin-top: 20%;
         padding-top: 10px;
       }
@@ -42,8 +42,17 @@
 
       <p id="output">Output</p>
       <h3 id="result">Result</h3>
+      <h3 id="game">Final Game Result</h3>
     </div>
     <script>
+
+      let score ={
+        game:0,
+        win : 0,
+        lost: 0,
+        tie: 0,
+
+      }
       let computerChoice;
       function computerChoiceSelection(){
         let randomNumber = Math.floor(Math.random()*3)
@@ -59,18 +68,22 @@
       }
 
       function userChoiceSelection(click_id,computerChoice){
+        score.game++;
         if(click_id === computerChoice){
+          score.tie++;
           document.querySelector('#output').innerText = `You Choose "${click_id}", and Computer choose "${computerChoice}" too`
           document.querySelector('#result').innerText = `It's a Tie!`
         }else if((click_id === 'Rock' && computerChoice === 'Scissor') || (click_id === 'Paper' && computerChoice === 'Rock') || (click_id === 'Scissor' && computerChoice === 'Paper')){
+          score.win++;
           document.querySelector('#output').innerText = `You Choose "${click_id}", and Computer choose "${computerChoice}"`
           document.querySelector('#result').innerText = `You Won!`
         }else{
+          score.lost++;
           document.querySelector('#output').innerText = `You Choose "${click_id}", and Computer choose "${computerChoice}"`
           document.querySelector('#result').innerText = `Computer Won!`
         }
         
-        
+        document.querySelector('#game').innerText = `Game played = ${score.game}\nYou Won = ${score.win}\nComputer Won = ${score.lost}\nTie = ${score.tie}`;
 
       }
 
