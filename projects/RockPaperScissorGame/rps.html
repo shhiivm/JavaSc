@@ -43,19 +43,48 @@
       <p id="output">Output</p>
       <h3 id="result">Result</h3>
       <h3 id="game">Final Game Result</h3>
+      <button class="btn" id="reset"
+      onclick="resetGame()
+      
+      ">Reset Game</button>
     </div>
     <script>
+      // let scoreString = localStorage.getItem('Score');
+      // let score;
+      // if(scoreString !== undefined){
+      //   score = JSON.parse(scoreString)
+      // }else{
+      //   score ={
+      //   game:0,
+      //   win : 0,
+      //   lost: 0,
+      //   tie: 0,
+      //   displayResult: function(){
+      //     return `Game played = ${score.game}\nYou Won = ${score.win}\nComputer Won = ${score.lost}\nTie = ${score.tie}`;
+      //   }
 
-      let score ={
+      // };
+
+      // }
+
+      let scoreString = localStorage.getItem('Score');
+      let score;
+      if(scoreString !== undefined){
+        score = JSON.parse(scoreString)
+      }else{
+        score ={
         game:0,
         win : 0,
         lost: 0,
         tie: 0,
-        displayResult: function(){
+      };
+      }
+
+      score.displayResult = function(){
           return `Game played = ${score.game}\nYou Won = ${score.win}\nComputer Won = ${score.lost}\nTie = ${score.tie}`;
         }
 
-      }
+       
       let computerChoice;
       function computerChoiceSelection(){
         let randomNumber = Math.floor(Math.random()*3)
@@ -71,6 +100,7 @@
       }
 
       function userChoiceSelection(click_id,computerChoice){
+        
         score.game++;
         if(click_id === computerChoice){
           score.tie++;
@@ -86,9 +116,16 @@
           document.querySelector('#result').innerText = `Computer Won!`
         }
         
+        localStorage.setItem('Score',JSON.stringify(score))
         document.querySelector('#game').innerText = score.displayResult();
 
+
       }
+
+      function resetGame(){
+        localStorage.removeItem('Score')
+      }
+      
 
     </script>
   </body>
