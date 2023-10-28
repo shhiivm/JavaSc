@@ -44,9 +44,13 @@
       <h3 id="result">Result</h3>
       <h3 id="game">Final Game Result</h3>
 
-      <button class="btn"
+      <button class="btn" id="reset"
       onclick="localStorage.clear()
       resetScore()
+      document.querySelector('#output').innerText = `Output`
+      document.querySelector('#result').innerText = `Result`
+      document.querySelector('#game').innerText = score.PrintResult();
+      
        
       
       ">Reset Game</button>
@@ -81,6 +85,9 @@
       score.displayResult = function(){
           return `Game played = ${score.game}\nYou Won = ${score.win}\nComputer Won = ${score.lost}\nTie = ${score.tie}`;
         }
+      score.PrintResult = function(){
+        return `Game played = 0\nYou Won = 0\nComputer Won = 0\nTie = 0`;
+      }
       }
 
 
@@ -121,7 +128,7 @@
         
         localStorage.setItem('Score',JSON.stringify(score))
         document.querySelector('#game').innerText = score.displayResult();
-
+        
 
       }
 
