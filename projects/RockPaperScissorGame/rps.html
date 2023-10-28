@@ -43,18 +43,17 @@
       <p id="output">Output</p>
       <h3 id="result">Result</h3>
       <h3 id="game">Final Game Result</h3>
-      <button class="btn" id="reset"
-      onclick="resetGame()
+
+      <button class="btn"
+      onclick="localStorage.clear()
+      resetScore()
+       
       
       ">Reset Game</button>
     </div>
     <script>
-      // let scoreString = localStorage.getItem('Score');
-      // let score;
-      // if(scoreString !== undefined){
-      //   score = JSON.parse(scoreString)
-      // }else{
-      //   score ={
+      
+      //   let score ={
       //   game:0,
       //   win : 0,
       //   lost: 0,
@@ -65,24 +64,28 @@
 
       // };
 
-      // }
-
       let scoreString = localStorage.getItem('Score');
       let score;
-      if(scoreString !== undefined){
-        score = JSON.parse(scoreString)
-      }else{
-        score ={
+
+      resetScore(scoreString);
+
+      function resetScore(scoreString){
+      
+      score = scoreString ? JSON.parse(scoreString) : {
         game:0,
         win : 0,
         lost: 0,
         tie: 0,
       };
-      }
 
       score.displayResult = function(){
           return `Game played = ${score.game}\nYou Won = ${score.win}\nComputer Won = ${score.lost}\nTie = ${score.tie}`;
         }
+      }
+
+
+
+     
 
        
       let computerChoice;
@@ -122,9 +125,7 @@
 
       }
 
-      function resetGame(){
-        localStorage.removeItem('Score')
-      }
+     
       
 
     </script>
