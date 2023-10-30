@@ -19,6 +19,11 @@
         margin: 4px 5px;
         cursor: pointer;
       }
+
+      .game-img{
+        width: 70px;
+        height: 100px;
+      }
     </style>
   </head>
   <body>
@@ -26,19 +31,22 @@
       <h1>Rock Paper Scissor</h1>
       <button class="btn" id="Rock" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">Rock</button>
+      userChoiceSelection(this.id, computerChoice)">
+      <img src="rock.png" alt="Rock Image" class="game-img"></button>
 
 
 
       <button class="btn" id="Paper" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">Paper</button>
+      userChoiceSelection(this.id, computerChoice)">
+      <img src="paper.png" alt="Paper Image" class="game-img"></button>
 
 
 
       <button class="btn" id="Scissor" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">Scissor</button>
+      userChoiceSelection(this.id, computerChoice)">
+      <img src="scissor.png" alt="Scissor Image" class="game-img"></button>
 
       <p id="output">Output</p>
       <h3 id="result">Result</h3>
