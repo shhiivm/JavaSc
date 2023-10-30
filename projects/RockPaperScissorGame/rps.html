@@ -7,21 +7,17 @@
     <style>
       .container {
         border: 2px solid rgb(188, 174, 174);
-        width: 50%;
+        width: 40%;
         text-align: center;
         margin: auto;
         height: auto;
-        margin-top: 10%;
+        margin-top: 20%;
         padding-top: 10px;
       }
       .btn{
         padding: 0px 10px;
         margin: 4px 5px;
         cursor: pointer;
-      }
-      .img-item{
-        width: 70px;
-        height: 100px;
       }
     </style>
   </head>
@@ -30,22 +26,19 @@
       <h1>Rock Paper Scissor</h1>
       <button class="btn" id="Rock" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">
-      <img src="rock.png" alt="Rock Image" class="img-item"></button>
+      userChoiceSelection(this.id, computerChoice)">Rock</button>
 
 
 
       <button class="btn" id="Paper" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">
-      <img src="paper.png" alt="Rock Image" class="img-item"></button>
+      userChoiceSelection(this.id, computerChoice)">Paper</button>
 
 
 
       <button class="btn" id="Scissor" onclick="
       computerChoiceSelection()
-      userChoiceSelection(this.id, computerChoice)">
-      <img src="scissor.png" alt="Rock Image" class="img-item"></button>
+      userChoiceSelection(this.id, computerChoice)">Scissor</button>
 
       <p id="output">Output</p>
       <h3 id="result">Result</h3>
